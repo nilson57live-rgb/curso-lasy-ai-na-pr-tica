@@ -1,0 +1,104 @@
+@import "tailwindcss";
+
+@theme {
+  --font-inter: 'Inter', system-ui, -apple-system, sans-serif;
+  
+  --color-background: oklch(100% 0 0);
+  --color-foreground: oklch(15% 0.01 270);
+  --color-primary: oklch(65% 0.25 270);
+  --color-primary-foreground: oklch(98% 0.01 270);
+  --color-secondary: oklch(75% 0.20 85);
+  --color-secondary-foreground: oklch(20% 0.01 270);
+  --color-accent: oklch(96% 0.01 270);
+  --color-accent-foreground: oklch(20% 0.01 270);
+  --color-muted: oklch(96% 0.01 270);
+  --color-muted-foreground: oklch(55% 0.01 270);
+  --color-border: oklch(90% 0.01 270);
+  
+  --radius-sm: 0.25rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+  --radius-xl: 1rem;
+  --radius-2xl: 1.5rem;
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+  
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-inter);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+@layer components {
+  .hero-gradient {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  }
+  
+  .btn-primary {
+    background: linear-gradient(to right, rgb(147 51 234), rgb(79 70 229));
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 0.75rem;
+    font-weight: 700;
+    font-size: 1.125rem;
+    transition: all 0.3s;
+  }
+  
+  .btn-primary:hover {
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    transform: scale(1.05);
+  }
+  
+  .btn-secondary {
+    background: linear-gradient(to right, rgb(234 179 8), rgb(249 115 22));
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 0.75rem;
+    font-weight: 700;
+    font-size: 1.125rem;
+    transition: all 0.3s;
+  }
+  
+  .btn-secondary:hover {
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    transform: scale(1.05);
+  }
+
+  .card-premium {
+    background-color: white;
+    border-radius: 1rem;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+    transition: all 0.3s;
+  }
+  
+  .card-premium:hover {
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  }
+
+  .section-container {
+    max-width: 80rem;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 4rem 1rem;
+  }
+  
+  @media (min-width: 640px) {
+    .section-container {
+      padding: 6rem 1.5rem;
+    }
+  }
+  
+  @media (min-width: 1024px) {
+    .section-container {
+      padding: 6rem 2rem;
+    }
+  }
+}
